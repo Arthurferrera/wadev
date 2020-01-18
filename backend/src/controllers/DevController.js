@@ -5,13 +5,11 @@ const parseStringAsArray = require('../utils/parseStringAsArray');
 module.exports = {
     async index(req, res) {
         const devs = await Dev.find();
-
         return res.json(devs);
     },
     
     async store(req, res) {
         const { github_username, techs, latitude, longitude } = req.body;
-
         let dev = await Dev.findOne({ github_username });
 
         if(!dev) {
@@ -35,7 +33,9 @@ module.exports = {
                 techs: techsArray,
                 location
             });
-        }  
+        } else {
+            // TODO: Retonar mensagem para o usuário
+        }
     
         
         return res.json(dev);
