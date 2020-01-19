@@ -19,15 +19,15 @@ const Routes = createAppContainer(
             }
         },
     },
-    // {
-    //     defaultNavigationOptions: {
-    //         headerTintColor: '#FFF',
-    //         headerBackTitleVisible: false,
-    //         headerStyle: {
-    //             backgroundColor: '#7d40e7'
-    //         }
-    //     }
-    // }
+    {
+        defaultNavigationOptions: {
+            headerTintColor: '#FFF',
+            headerBackTitleVisible: false,
+            headerStyle: {
+                backgroundColor: '#7d40e7'
+            }
+        }
+    }
     )
 );
 
