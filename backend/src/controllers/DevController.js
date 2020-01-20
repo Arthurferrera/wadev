@@ -34,9 +34,6 @@ module.exports = {
                 techs: techsArray,
                 location
             });
-            console.log('create new dev');
-            console.log(dev);
-            
             
             // Filtrar as conexões que estão no maximo a 10km de distância
             // e que o novo dev tenha pelo menos uma das techs filtradas
@@ -44,8 +41,6 @@ module.exports = {
                 { latitude, longitude },
                 techsArray
             )
-            console.log(sendSocketMessageTo);
-            
             sendMessage(sendSocketMessageTo, 'new-dev', dev);
         } else {
             // TODO: Retonar mensagem para o usuário
@@ -62,9 +57,19 @@ module.exports = {
 
     },
 
-    // TODO
-    // DELETAR UM DEV DA APLICAÇÃO
-    async destroy() {
+    async destroy(req, res) {
+        let { _id } = req.query;
 
+        Dev.findByIdAndDelete(
+            {_id},
+            (response) => {
+                console.log(`Response: ${response}`);
+                if (response != null) {
+                    return res.json({error: response})
+                }   
+            }
+        )
+        const devs = await Dev.find();
+        return res.json(devs);
     }
 };

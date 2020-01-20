@@ -9,9 +9,10 @@ li.dev-item header {
     display: flex;
     flex-direction: row;
     align-items: center;
+    position: relative;
 }
 
-li.dev-item header img {
+.imageUser {
     width: 54px;
     height: 54px;
     border-radius: 50%;
@@ -60,4 +61,12 @@ li.dev-item a:hover .svg-color-change {
 li.dev-item a img {
     height: 14px;
     width: 14px;
+}
+
+.iconDelete {
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
 }
