@@ -67,6 +67,11 @@ export default function Main({ navigation }) {
         setupWebSocket();
     }
 
+    async function centerMap() {
+        console.log('chegou');
+        
+    }
+
     function handleRegionChanged(region){
         setCurrentRegion(region);
     }
@@ -138,6 +143,14 @@ export default function Main({ navigation }) {
                     <MaterialIcons name="my-location" size={22} color="#FFF" />
                 </TouchableOpacity>
             </View>
+
+            {/* <View style={styles.homeButtonContent}>
+                <TouchableOpacity onPress={centerMap} style={styles.homeButton}>
+                    <Text style={styles.homeButtonText}>
+                        WaDev
+                    </Text>
+                </TouchableOpacity>
+            </View> */}
         </>
     );
 }
@@ -218,5 +231,30 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginLeft: 15
-    }
+    },
+
+    // homeButtonContent: {
+    //     position: 'absolute',
+    //     bottom: 20,
+    //     left: 20,
+    //     right: 20,
+    //     zIndex: 5,
+    //     flexDirection: 'row'
+    // },
+
+    // homeButton: {
+    //     width: 80,
+    //     height: 40,
+    //     backgroundColor: "#8E4DFF",
+    //     borderRadius: 25,
+    //     justifyContent: 'center',
+    //     alignItems: 'center',
+    //     marginLeft: 15,
+    // },
+
+    // homeButtonText: {
+    //     fontSize: 17,
+    //     fontWeight: '700',
+    //     color: '#fff'
+    // },
 })
